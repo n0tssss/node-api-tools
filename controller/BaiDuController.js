@@ -15,7 +15,12 @@ module.exports = (router) => {
         });
         const result = {
             keywords,
-            result: data.g.map((item) => item.q)
+            result: data.g.map((item) => {
+                return {
+                    text: item.q,
+                    href: `https://www.baidu.com/s?wd=${item.q}`
+                };
+            })
         };
         response.send(ResponseStatus.OK("成功", result));
     });

@@ -34,23 +34,53 @@
 
 ```json
 {
-    "status": 200,
-    "msg": "成功",
-    "data": {
-        "keywords": "测试",
-        "result": [
-            "测试工程师",
-            "测试怀孕的试纸图片一深一浅",
-            "测试怀孕什么时候最准确",
-            "测试人格mbti",
-            "测试抑郁程度的问卷",
-            "测试怀孕的试纸怎么看",
-            "测试用例",
-            "测试用例模板和例子",
-            "测试智商的国际标准",
-            "测试工程师是干嘛的"
-        ]
-    }
+	"status": 200,
+	"msg": "成功",
+	"data": {
+		"keywords": "测试",
+		"result": [
+			{
+				"text": "测试工程师",
+				"href": "https://www.baidu.com/s?wd=测试工程师"
+			},
+			{
+				"text": "测试怀孕最早几天可以查出来",
+				"href": "https://www.baidu.com/s?wd=测试怀孕最早几天可以查出来"
+			},
+			{
+				"text": "测试怀孕什么时候最准确",
+				"href": "https://www.baidu.com/s?wd=测试怀孕什么时候最准确"
+			},
+			{
+				"text": "测试怀孕的试纸图片一深一浅",
+				"href": "https://www.baidu.com/s?wd=测试怀孕的试纸图片一深一浅"
+			},
+			{
+				"text": "测试师怎么考",
+				"href": "https://www.baidu.com/s?wd=测试师怎么考"
+			},
+			{
+				"text": "测试人格mbti",
+				"href": "https://www.baidu.com/s?wd=测试人格mbti"
+			},
+			{
+				"text": "测试抑郁程度的问卷",
+				"href": "https://www.baidu.com/s?wd=测试抑郁程度的问卷"
+			},
+			{
+				"text": "测试怀孕的试纸怎么看",
+				"href": "https://www.baidu.com/s?wd=测试怀孕的试纸怎么看"
+			},
+			{
+				"text": "测试用例",
+				"href": "https://www.baidu.com/s?wd=测试用例"
+			},
+			{
+				"text": "测试用例模板和例子",
+				"href": "https://www.baidu.com/s?wd=测试用例模板和例子"
+			}
+		]
+	}
 }
 ```
 
