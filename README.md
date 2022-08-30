@@ -115,8 +115,8 @@
 | timeout | 1000                                    | false | Number | 请求方式      |
 | headers | 对象                                      | false | object | 请求头       |
 
-> 
-> 
+
+
 > 响应结果
 
 请求参数
@@ -429,9 +429,9 @@
 
 ```json
 {
-    "remain":99998, // 当天剩余的可推送 url 条数
-    "success":2, // 成功推送的 url 条数
-    "not_same_site":[], // 由于不是本站 url 而未处理的 url 列表
-    "not_valid":[] // 不合法的 url 列表
+    "remain": 99998, // 当天剩余的可推送 url 条数
+    "success": 2, // 成功推送的 url 条数
+    "not_same_site": [], // 由于不是本站 url 而未处理的 url 列表
+    "not_valid": [] // 不合法的 url 列表
 }
 ```
