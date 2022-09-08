@@ -435,3 +435,49 @@
     "not_valid": [] // 不合法的 url 列表
 }
 ```
+
+
+
+## 码云图片跨域访问
+
+> URL
+
+`https://api.n0ts.cn/gitee/image`
+
+
+
+> 请求方式
+
+`GET`
+
+
+
+> 请求参数
+
+| 参数名 | 参数值                                                       | 是否必填 | 类型   | 描述                   |
+| ------ | ------------------------------------------------------------ | -------- | ------ | ---------------------- |
+| url    | https://gitee.com/n0ts/note/raw/master/IDEA.assets/image-20220221160924706.png | true     | String | 码云仓库不能访问的图片 |
+| base64 | 任意（传入就为启用）                                         | false    | 任意   | 是否获取图片的 base64  |
+
+
+
+> 响应结果
+
+请求参数
+
+```json
+{
+	"url": "https://gitee.com/n0ts/note/raw/master/IDEA.assets/image-20220221160924706.png"
+}
+```
+
+响应
+
+![](https://api.n0ts.cn/gitee/image?url=https://gitee.com/n0ts/note/raw/master/IDEA.assets/image-20220221160924706.png)
+
+可直接放入 img 标签
+
+```html
+<img src="https://api.n0ts.cn/gitee/image?url=https://gitee.com/n0ts/note/raw/master/IDEA.assets/image-20220221160924706.png" />
+```
+
