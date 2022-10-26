@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 // config
-const config = require("./config/server");
+const config = require("./config/config");
 
 // 跨域配置
 app.all("*", (req, res, next) => {
