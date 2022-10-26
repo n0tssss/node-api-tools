@@ -19,7 +19,7 @@ module.exports = (router) => {
      * 代请求
      */
     router.post("/api/gitee", async (request, response) => {
-        const { method, url, params, data, headers, password } = request.body;
+        let { method, url, params, data, headers, password } = request.body;
         // 验证
         if (!method) {
             return response.send(ResponseStatus.FAIL("method 请求方法不能为空！"));
@@ -30,12 +30,18 @@ module.exports = (router) => {
         if (method != "GET" && password != config.password) {
             return response.send(ResponseStatus.FAIL("爬！"));
         }
+        if (!params) {
+            params = {};
+        }
+        if (!data) {
+            data = {};
+        }
 
         // 携带 token
         params.access_token = config.accessToken;
 
         // 是否设置超时时长
-        const timeout = params.timeout || (data ? data.timeout : null);
+        const timeout = params.timeout || data.timeout;
 
         // 请求
         let result = null;
