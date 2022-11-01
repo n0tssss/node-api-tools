@@ -30,32 +30,25 @@ module.exports = (router) => {
         if (method != "GET" && password != config.password) {
             return response.send(ResponseStatus.FAIL("爬！"));
         }
-        if (!params) {
-            params = {};
-        }
-        if (!data) {
-            data = {};
-        }
 
         // 携带 token
         params.access_token = config.accessToken;
 
         // 是否设置超时时长
-        const timeout = params.timeout || data.timeout;
+        const timeout = params?.timeout || data?.timeout;
 
-        // 请求
         let result = null;
         try {
             result = await http({
                 method,
-                url: config.giteeApi + url,
+                url,
                 params,
                 data,
                 timeout,
                 headers
             });
-        } catch (error) {
-            return response.send(ResponseStatus.FAIL(error.message));
+        } catch (err) {
+            return response.send(ResponseStatus.FAIL(err));
         }
         response.send(ResponseStatus.OK("成功", result));
     });
