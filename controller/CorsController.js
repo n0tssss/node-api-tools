@@ -6,12 +6,18 @@ module.exports = (router) => {
      * 代跨域
      */
     router.post("/cors", async (request, response) => {
-        const { method, url, params, data, headers } = request.body;
+        let { method, url, params, data, headers } = request.body;
         if (!method) {
             return response.send(ResponseStatus.FAIL("method 请求方法不能为空！"));
         }
         if (!url) {
             return response.send(ResponseStatus.FAIL("url 请求地址不能为空！"));
+        }
+        if (!params) {
+            params = {};
+        }
+        if (!data) {
+            data = {};
         }
         const timeout = params.timeout || data.timeout;
         const result = await http({
