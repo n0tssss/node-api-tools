@@ -39,7 +39,11 @@ module.exports = (router) => {
         }
 
         // 携带 token
-        params.access_token = config.accessToken;
+        if (!params) {
+            params = {
+                access_token: config.accessToken
+            };
+        }
 
         // 是否设置超时时长
         const timeout = params?.timeout || data?.timeout;
