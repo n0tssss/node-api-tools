@@ -1,3 +1,10 @@
+/*
+ * @Author: N0ts
+ * @Date: 2022-11-02 10:43:38
+ * @Description:
+ * @FilePath: /node-api-tools/controller/GiteeController.js
+ * @Mail：mail@n0ts.cn
+ */
 const ResponseStatus = require("../entity/ResponseStatus");
 const http = require("../utils/http");
 const config = require("../config/config");
@@ -41,7 +48,7 @@ module.exports = (router) => {
         try {
             result = await http({
                 method,
-                url,
+                url: config.giteeApi + url,
                 params,
                 data,
                 timeout,
