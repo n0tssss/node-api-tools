@@ -37,13 +37,15 @@ module.exports = (router) => {
         if (method != "GET" && password != config.password) {
             return response.send(ResponseStatus.FAIL("爬！"));
         }
+        if (!params) {
+            params = {};
+        }
+        if (!data) {
+            data = {};
+        }
 
         // 携带 token
-        if (!params) {
-            params = {
-                access_token: config.accessToken
-            };
-        }
+        params.access_token = config.accessToken;
 
         // 是否设置超时时长
         const timeout = params?.timeout || data?.timeout;
