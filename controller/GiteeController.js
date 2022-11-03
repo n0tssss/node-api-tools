@@ -48,8 +48,9 @@ module.exports = (router) => {
         params.access_token = config.accessToken;
 
         // 是否设置超时时长
-        const timeout = params?.timeout || data?.timeout;
+        const timeout = params.timeout || (data ? data.timeout : null);
 
+        // 请求
         let result = null;
         try {
             result = await http({
@@ -60,8 +61,8 @@ module.exports = (router) => {
                 timeout,
                 headers
             });
-        } catch (err) {
-            return response.send(ResponseStatus.FAIL(err));
+        } catch (error) {
+            return response.send(ResponseStatus.FAIL(error.message));
         }
         response.send(ResponseStatus.OK("成功", result));
     });
