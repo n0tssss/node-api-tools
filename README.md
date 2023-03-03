@@ -111,7 +111,7 @@
 | method  | GET                                     | true  | string | 请求方式      |
 | url     | https://cn.bing.com/HPImageArchive.aspx | true  | string | 请求地址      |
 | params  | 对象                                      | false | object | GET 请求参数  |
-| body    | 对象                                      | false | object | POST 请求参数 |
+| data    | 对象                                      | false | object | POST 请求参数 |
 | timeout | 1000                                    | false | Number | 请求方式      |
 | headers | 对象                                      | false | object | 请求头       |
 
