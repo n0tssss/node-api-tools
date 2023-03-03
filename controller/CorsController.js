@@ -34,7 +34,7 @@ module.exports = (router) => {
                 headers
             });
         } catch (err) {
-            return response.send(ResponseStatus.FAIL(err));
+            return response.send(ResponseStatus.FAIL(err.response.data));
         }
         response.send(ResponseStatus.OK("成功", result));
     });
