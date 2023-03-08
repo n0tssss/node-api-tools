@@ -15,6 +15,7 @@ const CorsController = require("../controller/CorsController");
 const MainController = require("../controller/MainController");
 const BingController = require("../controller/BingController");
 const GiteeController = require("../controller/GiteeController");
+const ChatGPTController = require("../controller/ChatGPTController");
 
 // 创建路由容器
 let router = express.Router();
@@ -25,5 +26,6 @@ MainController(router);
 BaiDuController(router);
 BingController(router);
 GiteeController(router);
+ChatGPTController(router);
 
 module.exports = router;

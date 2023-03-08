@@ -481,3 +481,85 @@
 <img src="https://api.n0ts.cn/gitee/image?url=https://gitee.com/n0ts/note/raw/master/IDEA.assets/image-20220221160924706.png" />
 ```
 
+
+
+## ChatGPT Stream
+
+> URL
+
+`https://api.n0ts.cn/chatgpt-stream`
+
+
+
+> 请求方式
+
+`GET`
+
+
+
+> 请求参数
+
+| 参数名   | 参数值        | 是否必填 | 类型       | 描述                     |
+| -------- | ------------- | -------- | ---------- | ------------------------ |
+| key      | xxxxxx        | true     | String     | OpenAI 申请的 key        |
+| model    | gpt-3.5-turbo | true     | String     | 数据模型                 |
+| messages | []            | true     | Array<xxx> | 官方文档的 messages 格式 |
+| timeout  | 60000         | true     | Number     | 超时时间                 |
+
+
+
+> 响应结果
+
+请求参数
+
+```json
+{
+    "key": "sk-xxx",
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "user",
+            "content": "你好"
+        }
+    ],
+    "timeout": 60000
+}
+```
+
+响应
+
+```json
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"role":"assistant"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"你"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"好"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"！"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"有"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"什"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"么"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"我"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"可以"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"帮"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"助"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"您"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"的"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"吗"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{"content":"？"},"index":0,"finish_reason":null}]}
+
+data: {"id":"chatcmpl-6rpgFFA7FWGH9h3hRU3dhRM55Ft0p","object":"chat.completion.chunk","created":1678288063,"model":"gpt-3.5-turbo-0301","choices":[{"delta":{},"index":0,"finish_reason":"stop"}]}
+
+data: [DONE]
+```
