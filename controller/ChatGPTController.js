@@ -13,7 +13,7 @@ module.exports = (router) => {
     /**
      * ChatGPT Stream
      */
-    router.get("/chatgpt-stream", (request, response) => {
+    router.post("/chatgpt-stream", (request, response) => {
         let { key, model, messages, timeout } = request.body;
 
         response.writeHead(200, {
