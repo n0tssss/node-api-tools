@@ -45,8 +45,13 @@ module.exports = (router) => {
                 });
             })
             .catch((err) => {
-                response.write("未知错误，请联系站长解决！");
-                response.end();
+                response.write("未知错误，请联系站长解决！\n");
+                err.response.data.on("data", (chunk) => {
+                    response.write(Buffer.from(chunk.toString()));
+                });
+                err.response.data.on("end", () => {
+                    response.end();
+                });
             });
     });
 
