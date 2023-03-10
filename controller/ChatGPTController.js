@@ -8,6 +8,7 @@
 
 const ResponseStatus = require("../entity/ResponseStatus");
 const http = require("../utils/http");
+const { encode, decode } = require("gpt-3-encoder");
 
 module.exports = (router) => {
     /**
@@ -45,7 +46,6 @@ module.exports = (router) => {
                 });
             })
             .catch((err) => {
-                response.write("未知错误，请联系站长解决！\n");
                 err.response.data.on("data", (chunk) => {
                     response.write(Buffer.from(chunk.toString()));
                 });
@@ -53,6 +53,21 @@ module.exports = (router) => {
                     response.end();
                 });
             });
+    });
+
+    router.get("/chatgpt/encoder", (request, response) => {
+        const { content } = request.query;
+        if (!content) {
+            return response.send(ResponseStatus.FAIL("缺少 content 参数"));
+        }
+        const encodeResult = encode(content);
+        response.send(
+            ResponseStatus.OK("好了哥", {
+                tokens: encodeResult.length,
+                result: encodeResult,
+                characters: content.length
+            })
+        );
     });
 
     return router;
